@@ -28,19 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.BackBox = new System.Windows.Forms.PictureBox();
+            this.FrontBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.BackBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FrontBox)).BeginInit();
             this.SuspendLayout();
+            // 
+            // BackBox
+            // 
+            this.BackBox.Location = new System.Drawing.Point(0, 0);
+            this.BackBox.Name = "BackBox";
+            this.BackBox.Size = new System.Drawing.Size(2000, 820);
+            this.BackBox.TabIndex = 0;
+            this.BackBox.TabStop = false;
+            // 
+            // FrontBox
+            // 
+            this.FrontBox.Location = new System.Drawing.Point(0, 0);
+            this.FrontBox.Name = "FrontBox";
+            this.FrontBox.Size = new System.Drawing.Size(2000, 820);
+            this.FrontBox.TabIndex = 1;
+            this.FrontBox.TabStop = false;
             // 
             // GameScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.FrontBox);
+            this.Controls.Add(this.BackBox);
             this.Name = "GameScreen";
             this.Size = new System.Drawing.Size(820, 820);
+            ((System.ComponentModel.ISupportInitialize)(this.BackBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FrontBox)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.PictureBox BackBox;
+        private System.Windows.Forms.PictureBox FrontBox;
     }
 }
