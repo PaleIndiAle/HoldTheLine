@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HoldTheLine.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,23 +16,36 @@ namespace HoldTheLine.Screens
         public MenuScreen()
         {
             InitializeComponent();
-        }
-
-        private void MenuScreen_KeyDown(object sender, KeyEventArgs e)
-        {
-            switch (e.KeyCode)
+            saveClass.LoadSave();
+            
+            if (saveClass.savequestionmark == "0")
             {
-                case Keys.Escape:
-                    Application.Exit();
-                    break;
-                default:
-                    break;
+                ContinueButton.BackColor = Color.Gray;
+                ContinueButton.Enabled = false;
+            }
+            else if (saveClass.savequestionmark == "1")
+            {
+                ContinueButton.BackColor = Color.White;
+                ContinueButton.Enabled = true;
             }
         }
 
-        private void MenuScreen_KeyUp(object sender, KeyEventArgs e)
+        private void ContinueButton_Click(object sender, EventArgs e)
         {
+            if (saveClass.side == "Allies")
+            {
+                Form1.ChangeScreen(this, new GameScreen());
+            }
+        }
 
+        private void PlayButton_Click(object sender, EventArgs e)
+        {
+            Form1.ChangeScreen(this, new SideScreen());
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

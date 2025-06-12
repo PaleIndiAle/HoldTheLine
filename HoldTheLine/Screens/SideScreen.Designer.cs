@@ -42,7 +42,6 @@
             this.button2.TabIndex = 12;
             this.button2.Text = "Central";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Visible = false;
             // 
             // button1
             // 
@@ -53,7 +52,7 @@
             this.button1.TabIndex = 11;
             this.button1.Text = "Allies";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 

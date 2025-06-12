@@ -28,54 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.PlayButton = new System.Windows.Forms.Button();
             this.ContinueButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.ExitButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(500, 451);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(167, 59);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Central";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Visible = false;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(154, 451);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(167, 59);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Allies";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
             // 
             // PlayButton
             // 
+            this.PlayButton.BackColor = System.Drawing.Color.White;
             this.PlayButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PlayButton.Location = new System.Drawing.Point(327, 501);
             this.PlayButton.Name = "PlayButton";
             this.PlayButton.Size = new System.Drawing.Size(167, 59);
             this.PlayButton.TabIndex = 8;
-            this.PlayButton.Text = "Play";
-            this.PlayButton.UseVisualStyleBackColor = true;
+            this.PlayButton.Text = "New Game";
+            this.PlayButton.UseVisualStyleBackColor = false;
+            this.PlayButton.Click += new System.EventHandler(this.PlayButton_Click);
             // 
             // ContinueButton
             // 
+            this.ContinueButton.BackColor = System.Drawing.Color.White;
             this.ContinueButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ContinueButton.Location = new System.Drawing.Point(327, 405);
             this.ContinueButton.Name = "ContinueButton";
             this.ContinueButton.Size = new System.Drawing.Size(167, 59);
             this.ContinueButton.TabIndex = 7;
             this.ContinueButton.Text = "Continue";
-            this.ContinueButton.UseVisualStyleBackColor = true;
+            this.ContinueButton.UseVisualStyleBackColor = false;
+            this.ContinueButton.Click += new System.EventHandler(this.ContinueButton_Click);
             // 
             // label1
             // 
@@ -88,31 +69,38 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Hold The Line";
             // 
+            // ExitButton
+            // 
+            this.ExitButton.BackColor = System.Drawing.Color.White;
+            this.ExitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExitButton.Location = new System.Drawing.Point(327, 599);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(167, 59);
+            this.ExitButton.TabIndex = 9;
+            this.ExitButton.Text = "Exit";
+            this.ExitButton.UseVisualStyleBackColor = false;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            // 
             // MenuScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.PlayButton);
             this.Controls.Add(this.ContinueButton);
             this.Controls.Add(this.label1);
             this.Name = "MenuScreen";
             this.Size = new System.Drawing.Size(820, 820);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MenuScreen_KeyDown);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MenuScreen_KeyUp);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button PlayButton;
         private System.Windows.Forms.Button ContinueButton;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button ExitButton;
     }
 }

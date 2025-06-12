@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Lifetime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
@@ -11,17 +13,17 @@ namespace HoldTheLine.Classes
     {
         public static string savequestionmark, side, informOthers, matthieuInformed, lochInformed, firstLoch, booze;
 
-        public void LoadSave()
+        public static void LoadSave()
         {
-            //Reads an XML FILE for level that player is on
+            //Reads save file
             XmlReader reader = XmlReader.Create($"Resources/savefile.xml");
 
             while (reader.Read())
             {
-                savequestionmark = reader.ReadString();
-
-                if (savequestionmark == "1")
+                if (reader.NodeType == XmlNodeType.Text)
                 {
+                    savequestionmark = reader.ReadString();
+
                     reader.ReadToNextSibling("side");
                     side = reader.ReadString();
 
@@ -39,14 +41,40 @@ namespace HoldTheLine.Classes
 
                     reader.ReadToNextSibling("booze");
                     booze = reader.ReadString();
-
-                    reader.Close();
-                }
-                else if (savequestionmark == "0")
-                {
-                    reader.Close();
                 }
             }
+            reader.Close();
+        }
+
+        public static void SaveSave()
+        {
+            XmlReader reader = XmlReader.Create($"Resources/savefile.xml");
+            XmlWriter writer = XmlWriter.Create($"Resources/savefile.xml");
+
+            if (reader.NodeType == XmlNodeType.Text)
+            {
+                writer.WriteString($"{savequestionmark}");
+
+                reader.ReadToNextSibling("side");
+                writer.WriteString($"{side}");
+
+                reader.ReadToNextSibling("informOthers");
+                writer.WriteString($"{informOthers}");
+
+                reader.ReadToNextSibling("matthieuInformed");
+                writer.WriteString($"{matthieuInformed}");
+
+                reader.ReadToNextSibling("lochInformed");
+                writer.WriteString($"{lochInformed}");
+
+                reader.ReadToNextSibling("firstLoch");
+                writer.WriteString($"{firstLoch}");
+
+                reader.ReadToNextSibling("booze");
+                writer.WriteString($"{booze}");
+            }
+            reader.Close();
+            writer.Close();
         }
     }
 }

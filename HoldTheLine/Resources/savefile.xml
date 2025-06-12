@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<level>
+<file>
 	<progression>
 		<savequestionmark>0</savequestionmark>
-		<side>None</side>
+		<side>Allies</side>
 		<InformOthers>0</InformOthers>
 		<MatthieuInformed>0</MatthieuInformed>
 		<LochInformed>0</LochInformed>
 		<FirstLoch>0</FirstLoch>
 		<Booze>0</Booze>
 	</progression>
-</level>
+</file>
