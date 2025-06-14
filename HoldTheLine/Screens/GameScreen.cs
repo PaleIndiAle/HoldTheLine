@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.WebRequestMethods;
 
 namespace HoldTheLine.Screens
 {
@@ -15,6 +16,8 @@ namespace HoldTheLine.Screens
         public GameScreen()
         {
             InitializeComponent();
+
+            //BackBox.Image = HoldTheLine.Resourcee.HTLMapBack;
         }
     }
 }
