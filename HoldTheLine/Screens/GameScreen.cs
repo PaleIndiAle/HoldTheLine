@@ -17,7 +17,8 @@ namespace HoldTheLine.Screens
         {
             InitializeComponent();
 
-            //BackBox.Image = HoldTheLine.Resourcee.HTLMapBack;
+            BackBox.Image = HoldTheLine.Properties.Resources.HTLMapBack;
+            FrontBox.Image = HoldTheLine.Properties.Resources.HTLMapFront__1_;
         }
     }
 }
