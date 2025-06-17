@@ -56,6 +56,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Screens\GameOverScreen.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -85,14 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Screens\GameOverScreen.resx">
       <DependentUpon>GameOverScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,7 +121,6 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Resources\HTLMapBack.png" />
-    <None Include="Resources\HTLMapFront %281%29.png" />
     <Content Include="Resources\HTLMapFront.png" />
     <Content Include="Resources\Idle.png" />
     <Content Include="Resources\L.png" />

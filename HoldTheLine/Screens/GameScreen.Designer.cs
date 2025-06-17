@@ -30,8 +30,10 @@
         {
             this.BackBox = new System.Windows.Forms.PictureBox();
             this.FrontBox = new System.Windows.Forms.PictureBox();
+            this.playerBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.BackBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FrontBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerBox)).BeginInit();
             this.SuspendLayout();
             // 
             // BackBox
@@ -50,17 +52,30 @@
             this.FrontBox.TabIndex = 1;
             this.FrontBox.TabStop = false;
             // 
+            // playerBox
+            // 
+            this.playerBox.Location = new System.Drawing.Point(0, 316);
+            this.playerBox.Name = "playerBox";
+            this.playerBox.Size = new System.Drawing.Size(150, 200);
+            this.playerBox.TabIndex = 2;
+            this.playerBox.TabStop = false;
+            // 
             // GameScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.FrontBox);
+            this.Controls.Add(this.playerBox);
             this.Controls.Add(this.BackBox);
+            this.DoubleBuffered = true;
             this.Name = "GameScreen";
             this.Size = new System.Drawing.Size(820, 820);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameScreen_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.GameScreen_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.BackBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FrontBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -69,5 +84,6 @@
 
         private System.Windows.Forms.PictureBox BackBox;
         private System.Windows.Forms.PictureBox FrontBox;
+        private System.Windows.Forms.PictureBox playerBox;
     }
 }
