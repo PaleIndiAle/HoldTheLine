@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HoldTheLine.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +20,8 @@ namespace HoldTheLine.Screens
 
         private void button1_Click(object sender, EventArgs e)
         {
+            saveClass.side = "Allies";
+            saveClass.savequestionmark = "1";
             Form1.ChangeScreen(this, new GameScreen());
         }
     }

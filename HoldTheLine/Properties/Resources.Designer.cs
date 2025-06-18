@@ -103,6 +103,16 @@ namespace HoldTheLine.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Left {
+            get {
+                object obj = ResourceManager.GetObject("Left", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Lo {
             get {
                 object obj = ResourceManager.GetObject("Lo", resourceCulture);
@@ -113,9 +123,9 @@ namespace HoldTheLine.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap WalkingLeft {
+        internal static System.Drawing.Bitmap NPCIdle {
             get {
-                object obj = ResourceManager.GetObject("WalkingLeft", resourceCulture);
+                object obj = ResourceManager.GetObject("NPCIdle", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +133,9 @@ namespace HoldTheLine.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap WalkingRight {
+        internal static System.Drawing.Bitmap Right {
             get {
-                object obj = ResourceManager.GetObject("WalkingRight", resourceCulture);
+                object obj = ResourceManager.GetObject("Right", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

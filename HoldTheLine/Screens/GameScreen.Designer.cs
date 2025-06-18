@@ -28,12 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.BackBox = new System.Windows.Forms.PictureBox();
             this.FrontBox = new System.Windows.Forms.PictureBox();
+            this.gameTimer = new System.Windows.Forms.Timer(this.components);
             this.playerBox = new System.Windows.Forms.PictureBox();
+            this.MatthieuBox = new System.Windows.Forms.PictureBox();
+            this.EdwinBox = new System.Windows.Forms.PictureBox();
+            this.LochlanBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.BackBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FrontBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MatthieuBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EdwinBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LochlanBox)).BeginInit();
             this.SuspendLayout();
             // 
             // BackBox
@@ -52,13 +60,41 @@
             this.FrontBox.TabIndex = 1;
             this.FrontBox.TabStop = false;
             // 
+            // gameTimer
+            // 
+            this.gameTimer.Tick += new System.EventHandler(this.gameTimer_Tick);
+            // 
             // playerBox
             // 
-            this.playerBox.Location = new System.Drawing.Point(0, 316);
+            this.playerBox.Location = new System.Drawing.Point(190, 370);
             this.playerBox.Name = "playerBox";
             this.playerBox.Size = new System.Drawing.Size(150, 200);
             this.playerBox.TabIndex = 2;
             this.playerBox.TabStop = false;
+            // 
+            // MatthieuBox
+            // 
+            this.MatthieuBox.Location = new System.Drawing.Point(400, 370);
+            this.MatthieuBox.Name = "MatthieuBox";
+            this.MatthieuBox.Size = new System.Drawing.Size(150, 200);
+            this.MatthieuBox.TabIndex = 3;
+            this.MatthieuBox.TabStop = false;
+            // 
+            // EdwinBox
+            // 
+            this.EdwinBox.Location = new System.Drawing.Point(0, 370);
+            this.EdwinBox.Name = "EdwinBox";
+            this.EdwinBox.Size = new System.Drawing.Size(150, 200);
+            this.EdwinBox.TabIndex = 4;
+            this.EdwinBox.TabStop = false;
+            // 
+            // LochlanBox
+            // 
+            this.LochlanBox.Location = new System.Drawing.Point(556, 370);
+            this.LochlanBox.Name = "LochlanBox";
+            this.LochlanBox.Size = new System.Drawing.Size(150, 200);
+            this.LochlanBox.TabIndex = 5;
+            this.LochlanBox.TabStop = false;
             // 
             // GameScreen
             // 
@@ -66,16 +102,23 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.FrontBox);
+            this.Controls.Add(this.EdwinBox);
             this.Controls.Add(this.playerBox);
+            this.Controls.Add(this.MatthieuBox);
+            this.Controls.Add(this.LochlanBox);
             this.Controls.Add(this.BackBox);
             this.DoubleBuffered = true;
             this.Name = "GameScreen";
             this.Size = new System.Drawing.Size(820, 820);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.GameScreen_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameScreen_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.GameScreen_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.BackBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FrontBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MatthieuBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EdwinBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LochlanBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -84,6 +127,10 @@
 
         private System.Windows.Forms.PictureBox BackBox;
         private System.Windows.Forms.PictureBox FrontBox;
+        private System.Windows.Forms.Timer gameTimer;
         private System.Windows.Forms.PictureBox playerBox;
+        private System.Windows.Forms.PictureBox MatthieuBox;
+        private System.Windows.Forms.PictureBox EdwinBox;
+        private System.Windows.Forms.PictureBox LochlanBox;
     }
 }

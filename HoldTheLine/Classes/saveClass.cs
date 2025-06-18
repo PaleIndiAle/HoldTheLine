@@ -16,7 +16,7 @@ namespace HoldTheLine.Classes
         public static void LoadSave()
         {
             //Reads save file
-            XmlReader reader = XmlReader.Create($"Resources/savefile.xml");
+            XmlReader reader = XmlReader.Create($"Resources/savefile.xml", null);
 
             while (reader.Read())
             {
@@ -42,38 +42,25 @@ namespace HoldTheLine.Classes
                     reader.ReadToNextSibling("booze");
                     booze = reader.ReadString();
                 }
+                reader.Close();
             }
-            reader.Close();
         }
 
         public static void SaveSave()
         {
-            XmlReader reader = XmlReader.Create($"Resources/savefile.xml");
             XmlWriter writer = XmlWriter.Create($"Resources/savefile.xml");
 
-            if (reader.NodeType == XmlNodeType.Text)
-            {
-                writer.WriteString($"{savequestionmark}");
+            writer.WriteStartElement("PlayerSave");
 
-                reader.ReadToNextSibling("side");
-                writer.WriteString($"{side}");
+            writer.WriteElementString("savequestionmark", savequestionmark);
+            writer.WriteElementString("side", side);
+            writer.WriteElementString("informOthers", informOthers);
+            writer.WriteElementString("matthieuInformed", matthieuInformed);
+            writer.WriteElementString("lochInformed", lochInformed);
+            writer.WriteElementString("firstLoch", firstLoch);
+            writer.WriteElementString("booze", booze);
 
-                reader.ReadToNextSibling("informOthers");
-                writer.WriteString($"{informOthers}");
-
-                reader.ReadToNextSibling("matthieuInformed");
-                writer.WriteString($"{matthieuInformed}");
-
-                reader.ReadToNextSibling("lochInformed");
-                writer.WriteString($"{lochInformed}");
-
-                reader.ReadToNextSibling("firstLoch");
-                writer.WriteString($"{firstLoch}");
-
-                reader.ReadToNextSibling("booze");
-                writer.WriteString($"{booze}");
-            }
-            reader.Close();
+            writer.WriteEndElement();
             writer.Close();
         }
     }
