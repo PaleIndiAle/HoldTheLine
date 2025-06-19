@@ -96,7 +96,7 @@
             // 
             // LochlanBox
             // 
-            this.LochlanBox.Location = new System.Drawing.Point(556, 370);
+            this.LochlanBox.Location = new System.Drawing.Point(645, 370);
             this.LochlanBox.Name = "LochlanBox";
             this.LochlanBox.Size = new System.Drawing.Size(150, 200);
             this.LochlanBox.TabIndex = 5;
@@ -163,21 +163,20 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.FrontBox);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.ChatLabel);
             this.Controls.Add(this.CharacterNameLabel);
             this.Controls.Add(this.blackBox);
-            this.Controls.Add(this.FrontBox);
             this.Controls.Add(this.EdwinBox);
-            this.Controls.Add(this.playerBox);
             this.Controls.Add(this.MatthieuBox);
             this.Controls.Add(this.LochlanBox);
+            this.Controls.Add(this.playerBox);
             this.Controls.Add(this.BackBox);
             this.DoubleBuffered = true;
             this.Name = "GameScreen";
             this.Size = new System.Drawing.Size(820, 820);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.GameScreen_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameScreen_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.GameScreen_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.BackBox)).EndInit();

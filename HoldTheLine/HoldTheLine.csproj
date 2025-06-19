@@ -120,6 +120,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resources\hard_shoes_1-daniel_simon.wav" />
+    <None Include="Resources\Background.png" />
+    <None Include="Resources\Background2.png" />
     <Content Include="Resources\HTLMapBack.png" />
     <Content Include="Resources\HTLMapFront.png" />
     <Content Include="Resources\Idle.png" />

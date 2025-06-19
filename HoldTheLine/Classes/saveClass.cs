@@ -12,7 +12,7 @@ namespace HoldTheLine.Classes
 {
     internal class saveClass
     {
-        public static string savequestionmark, side, informOthers, matthieuInformed, lochInformed, firstLoch, booze;
+        public static string savequestionmark, side, informOthers, matthieuInformed, lochInformed, booze;
 
         public static void LoadSave()
         {

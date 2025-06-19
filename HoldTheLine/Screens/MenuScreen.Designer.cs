@@ -32,6 +32,8 @@
             this.ContinueButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.ExitButton = new System.Windows.Forms.Button();
+            this.backgroundBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.backgroundBox)).BeginInit();
             this.SuspendLayout();
             // 
             // PlayButton
@@ -81,6 +83,15 @@
             this.ExitButton.UseVisualStyleBackColor = false;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
+            // backgroundBox
+            // 
+            this.backgroundBox.Image = global::HoldTheLine.Properties.Resources.Background;
+            this.backgroundBox.Location = new System.Drawing.Point(0, 0);
+            this.backgroundBox.Name = "backgroundBox";
+            this.backgroundBox.Size = new System.Drawing.Size(820, 820);
+            this.backgroundBox.TabIndex = 10;
+            this.backgroundBox.TabStop = false;
+            // 
             // MenuScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -90,8 +101,10 @@
             this.Controls.Add(this.PlayButton);
             this.Controls.Add(this.ContinueButton);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.backgroundBox);
             this.Name = "MenuScreen";
             this.Size = new System.Drawing.Size(820, 820);
+            ((System.ComponentModel.ISupportInitialize)(this.backgroundBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,5 +115,6 @@
         private System.Windows.Forms.Button ContinueButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button ExitButton;
+        private System.Windows.Forms.PictureBox backgroundBox;
     }
 }
