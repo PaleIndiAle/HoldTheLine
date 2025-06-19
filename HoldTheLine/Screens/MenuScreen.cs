@@ -21,12 +21,12 @@ namespace HoldTheLine.Screens
             
             if (saveClass.savequestionmark == "0")
             {
-                ContinueButton.BackColor = Color.Gray;
+                ContinueButton.Visible = false;
                 ContinueButton.Enabled = false;
             }
             else if (saveClass.savequestionmark == "1")
             {
-                ContinueButton.BackColor = Color.White;
+                ContinueButton.Visible = true;
                 ContinueButton.Enabled = true;
             }
         }
