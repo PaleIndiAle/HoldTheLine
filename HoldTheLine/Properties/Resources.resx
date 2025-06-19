@@ -124,6 +124,12 @@
   <data name="Background2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Background2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="backgroundnoise" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\backgroundnoise.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="footsteps" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\footsteps.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="HTLMapBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HTLMapBack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,13 +148,13 @@
   <data name="Lo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Lo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="march" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hard_shoes_1-daniel_simon.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="NPCIdle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NPCIdle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Whistle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Whistle.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

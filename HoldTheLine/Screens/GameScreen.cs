@@ -24,9 +24,10 @@ namespace HoldTheLine.Screens
         bool Talking = false;
         bool Understood = false;
 
-        // Sets up the color to fill rectangles with and walking sound effect
+        // Sets up the color to fill rectangles with and sound effects
         SolidBrush whiteBrush = new SolidBrush(Color.White);
-        SoundPlayer marching = new SoundPlayer(Properties.Resources.march);
+        SoundPlayer walking = new SoundPlayer(Properties.Resources.footsteps);
+        SoundPlayer bgns = new SoundPlayer(Properties.Resources.backgroundnoise);
 
         // Sets up where the player is and how fast they're walking
         int x = 190;
@@ -168,27 +169,31 @@ namespace HoldTheLine.Screens
 
         private void gameTimer_Tick(object sender, EventArgs e)
         {
+            // plays the background soundtrack
+            bgns.PlayLooping();
+            // tracks where the player is
             playerBox.Location = new Point(x, y);
+            // Sets up a timer before the offensive, hard set game over
             timer++;
 
             if (leftArrowDown == true && x > 0 - 50)
             {
                 playerBox.Image = HoldTheLine.Properties.Resources.Left;
                 x -= speed;
-                marching.Play();
+                walking.PlayLooping();
             }
             else if (rightArrowDown == true && x < 820 - 100)
             {
                 playerBox.Image = HoldTheLine.Properties.Resources.Right;
                 x += speed;
-                marching.Play();
+                walking.PlayLooping();
             }
             else if (leftArrowDown == false && rightArrowDown == false)
             {
                 playerBox.Image = HoldTheLine.Properties.Resources.Idle;
             }
 
-            if (timer == 60000)
+            if (timer == 20000)
             {
                 Form1.ChangeScreen(this, new GameOverScreen());
             }
