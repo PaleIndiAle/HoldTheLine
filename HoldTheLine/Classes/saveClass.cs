@@ -36,9 +36,6 @@ namespace HoldTheLine.Classes
                     reader.ReadToNextSibling("lochInformed");
                     lochInformed = reader.ReadString();
 
-                    reader.ReadToNextSibling("firstLoch");
-                    firstLoch = reader.ReadString();
-
                     reader.ReadToNextSibling("booze");
                     booze = reader.ReadString();
                 }
@@ -57,7 +54,6 @@ namespace HoldTheLine.Classes
             writer.WriteElementString("informOthers", informOthers);
             writer.WriteElementString("matthieuInformed", matthieuInformed);
             writer.WriteElementString("lochInformed", lochInformed);
-            writer.WriteElementString("firstLoch", firstLoch);
             writer.WriteElementString("booze", booze);
 
             writer.WriteEndElement();
