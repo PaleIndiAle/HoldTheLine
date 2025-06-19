@@ -64,23 +64,20 @@ namespace HoldTheLine.Screens
             LochlanBox.Image = HoldTheLine.Properties.Resources.Lo;
         }
 
+        // Controls for keys
         private void GameScreen_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
             {
-                // Press A to go left
                 case Keys.A:
                     leftArrowDown = true;
                     break;
-                // Press D to go right
                 case Keys.D:
                     rightArrowDown = true;
                     break;
-                // Press Enter to continue to the next piece of dialogue
                 case Keys.Enter:
                     Understood = true;
                     break;
-                // Press Escape to stop the program and save the player's progress
                 case Keys.Escape:
                     gameTimer.Stop();
                     saveClass.SaveSave();
@@ -112,8 +109,10 @@ namespace HoldTheLine.Screens
             }
         }
 
+        // Results from pressing the left button
         private void button1_Click(object sender, EventArgs e)
         {
+            // accepted the alcohol
             if (Lochlan == 1 || Lochlan == 2 && saveClass.booze == "0")
             {
                 Talking = false;
@@ -122,11 +121,13 @@ namespace HoldTheLine.Screens
                 saveClass.booze = "1";
                 if (Lochlan == 1)
                 {
-                    Lochlan++;
+                    Lochlan = 2;
                 }
                 button1.Visible = false;
                 button2.Visible = false;
+                this.Focus();
             }
+            // had nothing to say to Lochlan
             else if (Lochlan == 2 && saveClass.lochInformed == "1" && saveClass.booze == "1")
             {
                 Talking = false;
@@ -134,20 +135,25 @@ namespace HoldTheLine.Screens
                 ChatLabel.Text = "Alright then laddie.";
                 button1.Visible = false;
                 button2.Visible = false;
+                this.Focus();
             }
         }
 
+        // Results from pressing the right button
         private void button2_Click(object sender, EventArgs e)
         {
+            // declined the alcohol
             if (Lochlan == 1)
             {
                 Talking = false;
                 CharacterNameLabel.Text = "Sergeant Lochlan";
                 ChatLabel.Text = "Suit yourself laddie.";
-                Lochlan++;
+                Lochlan = 2;
                 button1.Visible = false;
                 button2.Visible = false;
+                this.Focus();
             }
+            // informing Lochlan about the attack
             else if (Lochlan == 2)
             {
                 Talking = false;
@@ -156,6 +162,7 @@ namespace HoldTheLine.Screens
                 saveClass.lochInformed = "1";
                 button1.Visible = false;
                 button2.Visible = false;
+                this.Focus();
             }
         }
 
@@ -186,100 +193,107 @@ namespace HoldTheLine.Screens
                 Form1.ChangeScreen(this, new GameOverScreen());
             }
 
-            //if (x > 0 - 100 && x < 200 + 100 /*&& Talking == true*/)
-            //{
-            //    if (saveClass.informOthers == "0")
-            //    {
-            //        CharacterNameLabel.Visible = true;
-            //        ChatLabel.Visible = true;
-            //        CharacterNameLabel.Text = "";
-            //        ChatLabel.Text = "Lieutenant Edwin was checking his pocket watch when he noticed me,\ngesturing me over while he got his whistle ready.";
-            //        Edwin++;
-            //    }
-            //    else if (Understood == true && saveClass.informOthers == "0" && Edwin == 1)
-            //    {
-            //        CharacterNameLabel.Text = "Lieutenant Edwin";
-            //        ChatLabel.Text = "Get ready ol' chap,\nwe'll be going over the top soon and give those huns hell.";
-            //        Edwin++;
-            //    }
-            //    else if (Understood == true && saveClass.informOthers == "0" && Edwin == 2)
-            //    {
-            //        CharacterNameLabel.Text = "Lieutenant Edwin";
-            //        ChatLabel.Text = "You could go tell the others to start getting ready.";
-            //        Edwin = 0;
-            //    }
-            //    else if (saveClass.informOthers == "1")
-            //    {
-            //        CharacterNameLabel.Visible = true;
-            //        ChatLabel.Visible = true;
-            //        CharacterNameLabel.Text = "";
-            //        ChatLabel.Text = "Lieutenant Edwin noticed me looking at him and stared back coldly,\nstill with his whistle in his mouth.";
-            //        Edwin++;
-            //    }
-            //    else if (Understood == true && saveClass.informOthers == "1" && Edwin == 1)
-            //    {
-            //        CharacterNameLabel.Text = "Lieutenant Edwin";
-            //        ChatLabel.Text = "Well?";
-            //        Edwin++;
-            //    }
-            //    else if (Understood == true && saveClass.informOthers == "1" && saveClass.matthieuInformed == "1" && saveClass.lochInformed == "1" && Edwin == 2)
-            //    {
-            //        CharacterNameLabel.Text = "";
-            //        ChatLabel.Text = "You nod and Lieutenant Edwin nods back before getting ready on the wooden ladder,\nit rickets as he puts pressure on a step.";
-            //        Edwin = 0;
-            //    }
-            //    else if (Understood == true && saveClass.informOthers == "1" && Edwin == 3)
-            //    {
-            //        Form1.ChangeScreen(this, new GameOverScreen());
-            //    }
-            //    else if (Understood == true && saveClass.informOthers == "1" && Edwin == 2)
-            //    {
-            //        CharacterNameLabel.Text = "";
-            //        ChatLabel.Text = "You shake your head as Lieutenant Edwin scoffs.\nHe picks up his pocket watch again to inspect the time,\nthe small hand ticking down ever so slowly as you walked away.";
-            //        Edwin = 0;
-            //    }
-            //}
-            //else if (Understood == true && Edwin == 0)
-            //{
-            //    Talking = false;
-            //    CharacterNameLabel.Visible = false;
-            //    ChatLabel.Visible = false;
-            //    CharacterNameLabel.Text = "";
-            //    ChatLabel.Text = "";
-            //}
-            //else
-            //{
-            //    Talking = false;
-            //    CharacterNameLabel.Visible = false;
-            //    ChatLabel.Visible = false;
-            //    CharacterNameLabel.Text = "";
-            //    ChatLabel.Text = "";
-            //}
-
-            if (x > 190 && x < 390 && Talking == true)
+            // Interacting with Lieutenant Edwin
+            if (x > 0 && x < 180 && Talking == true)
             {
+                // First time interacting
+                if (saveClass.informOthers == "0")
+                {
+                    CharacterNameLabel.Visible = true;
+                    ChatLabel.Visible = true;
+                    CharacterNameLabel.Text = "";
+                    ChatLabel.Text = "Lieutenant Edwin was checking his pocket watch when he noticed me,\ngesturing me over while he got his whistle ready.";
+                    Edwin = 1;
+                }
+                else if (Understood == true && saveClass.informOthers == "0" && Edwin == 1)
+                {
+                    CharacterNameLabel.Text = "Lieutenant Edwin";
+                    ChatLabel.Text = "Get ready ol' chap,\nwe'll be going over the top soon and give those huns hell.";
+                    Edwin = 2;
+                }
+                else if (Understood == true && saveClass.informOthers == "0" && Edwin == 2)
+                {
+                    CharacterNameLabel.Text = "Lieutenant Edwin";
+                    ChatLabel.Text = "You could go tell the others to start getting ready.";
+                    Edwin = 0;
+                }
+                // After your first interaction
+                else if (saveClass.informOthers == "1")
+                {
+                    CharacterNameLabel.Visible = true;
+                    ChatLabel.Visible = true;
+                    CharacterNameLabel.Text = "";
+                    ChatLabel.Text = "Lieutenant Edwin noticed me looking at him and stared back coldly,\nstill with his whistle in his mouth.";
+                    Edwin = 1;
+                }
+                else if (Understood == true && saveClass.informOthers == "1" && Edwin == 1)
+                {
+                    CharacterNameLabel.Text = "Lieutenant Edwin";
+                    ChatLabel.Text = "Well?";
+                    Edwin = 2;
+                }
+                // If you informed everyone
+                else if (Understood == true && saveClass.informOthers == "1" && saveClass.matthieuInformed == "1" && saveClass.lochInformed == "1" && Edwin == 2)
+                {
+                    CharacterNameLabel.Text = "";
+                    ChatLabel.Text = "You nod and Lieutenant Edwin nods back before getting ready on the wooden ladder,\nit rickets as he puts pressure on a step.";
+                    Edwin = 3;
+                }
+                // Ends game early
+                else if (Understood == true && saveClass.informOthers == "1" && Edwin == 3)
+                {
+                    gameTimer.Stop();
+                    Form1.ChangeScreen(this, new GameOverScreen());
+                }
+                // If you haven't informed everyone
+                else if (Understood == true && saveClass.informOthers == "1" && Edwin == 2)
+                {
+                    CharacterNameLabel.Text = "";
+                    ChatLabel.Text = "You shake your head as Lieutenant Edwin scoffs.\nHe picks up his pocket watch again to inspect the time,\nthe small hand ticking down ever so slowly as you walked away.";
+                    Edwin = 0;
+                }
+            }
+            // Wipes dialogue clean at the end of every conversation tree
+            else if (Understood == true && Edwin == 0)
+            {
+                Talking = false;
+                CharacterNameLabel.Visible = false;
+                ChatLabel.Visible = false;
+                CharacterNameLabel.Text = "";
+                ChatLabel.Text = "";
+            }
+
+            // Interacting with Matthieu
+            if (x > 380 && x < 580 && Talking == true)
+            {
+                // First time interaction and if you don't have informOthers set as "1"
                 if (Matthieu == 0)
                 {
                     CharacterNameLabel.Visible = true;
                     ChatLabel.Visible = true;
                     CharacterNameLabel.Text = "Corporal Matthieu";
                     ChatLabel.Text = "Si tu n'as rien d'important,\nlaisse-moi tranquille.";
-                    Matthieu++;
+                    if (saveClass.informOthers == "1")
+                    {
+                        Matthieu = 1;
+                    }
                     timer2++;
                 }
+                // If you have informOthers
                 else if (Understood == true && saveClass.informOthers == "1" && Matthieu == 1)
                 {
                     CharacterNameLabel.Text = "";
                     ChatLabel.Text = "You try to inform Matthieu about the upcoming offensive in the best french you can,\nbut it is clear that he is not impressed.";
-                    Edwin++;
+                    Matthieu = 2;
                 }
                 else if (Understood == true && saveClass.informOthers == "1" && Matthieu == 2)
                 {
                     CharacterNameLabel.Text = "Corporal Matthieu";
                     ChatLabel.Text = "Ton français est horrible, mais je comprends qu'on va bientôt attaquer. Je vais me préparer.";
                     saveClass.matthieuInformed = "1";
-                    Matthieu++;
+                    Matthieu = 3;
                 }
+                // Interacting with Matthieu after informing him about the offensive
                 else if (saveClass.matthieuInformed == "1" && Matthieu == 3)
                 {
                     CharacterNameLabel.Visible = true;
@@ -288,36 +302,31 @@ namespace HoldTheLine.Screens
                     ChatLabel.Text = "Va trouver quelqu'un d'autre à déranger.";
                 }
             }
-            else if (timer2 == 5000)
+            // Wipes dialogue clean at the end of every conversation tree
+            else if (Understood == true && Matthieu == 0 || Understood == true && Matthieu == 3)
             {
+                Talking = false;
                 timer2 = 0;
-                Talking = false;
                 CharacterNameLabel.Visible = false;
                 ChatLabel.Visible = false;
                 CharacterNameLabel.Text = "";
                 ChatLabel.Text = "";
                 Matthieu = 0;
             }
-            else
+            
+            // Interacting with Lochlan
+            if (x > 650 && x < 870 && Talking == true)
             {
-                Talking = false;
-                CharacterNameLabel.Visible = false;
-                ChatLabel.Visible = false;
-                CharacterNameLabel.Text = "";
-                ChatLabel.Text = "";
-                Matthieu = 0;
-            }
-
-            if (x > 545 && x < 820 && Talking == true)
-            {
+                // First time interaction
                 if (Lochlan == 0)
                 {
                     CharacterNameLabel.Visible = true;
                     ChatLabel.Visible = true;
                     CharacterNameLabel.Text = "Sergeant Lochlan";
                     ChatLabel.Text = "Ey there laddie, want a drink?";
-                    Lochlan++;
+                    Lochlan = 1;
                 }
+                // Decision between accepting the alcohol or declining
                 else if (Understood == true && Lochlan == 1)
                 {
                     CharacterNameLabel.Text = "";
@@ -327,7 +336,8 @@ namespace HoldTheLine.Screens
                     button1.Text = "Accept";
                     button2.Text = "Decline";
                 }
-                else if (Talking == true && Lochlan == 2)
+                // Interaction after interacting with Lochlan for the first time
+                else if (Understood == true && Talking == true && Lochlan == 2)
                 {
                     CharacterNameLabel.Text = "Sergeant Lochlan";
                     ChatLabel.Text = "How can I help ya laddie?";
@@ -348,7 +358,8 @@ namespace HoldTheLine.Screens
                     }
                 }
             }
-            else if (Understood == true && Talking == false && Lochlan == 2)
+            // Wipes dialogue clean at the end of every conversation tree
+            else if (Understood == true && Lochlan == 2)
             {
                 Talking = false;
                 CharacterNameLabel.Visible = false;

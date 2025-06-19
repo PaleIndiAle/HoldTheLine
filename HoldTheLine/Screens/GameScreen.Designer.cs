@@ -96,7 +96,7 @@
             // 
             // LochlanBox
             // 
-            this.LochlanBox.Location = new System.Drawing.Point(645, 370);
+            this.LochlanBox.Location = new System.Drawing.Point(670, 370);
             this.LochlanBox.Name = "LochlanBox";
             this.LochlanBox.Size = new System.Drawing.Size(150, 200);
             this.LochlanBox.TabIndex = 5;
