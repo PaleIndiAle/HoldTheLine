@@ -22,7 +22,7 @@ namespace HoldTheLine.Screens
 
         // Sets up when an NPC is talking and when to move on to the next dialogue
         bool Talking = false;
-        bool Understood = false;
+        bool Understood;
 
         // Sets up the color to fill rectangles with and sound effects
         SolidBrush whiteBrush = new SolidBrush(Color.White);
@@ -193,80 +193,80 @@ namespace HoldTheLine.Screens
                 playerBox.Image = HoldTheLine.Properties.Resources.Idle;
             }
 
-            if (timer == 20000)
+            if (timer == 10000)
             {
                 Form1.ChangeScreen(this, new GameOverScreen());
             }
 
-            // Interacting with Lieutenant Edwin
-            if (x > 0 && x < 180 && Talking == true)
-            {
-                // First time interacting
-                if (saveClass.informOthers == "0")
-                {
-                    CharacterNameLabel.Visible = true;
-                    ChatLabel.Visible = true;
-                    CharacterNameLabel.Text = "";
-                    ChatLabel.Text = "Lieutenant Edwin was checking his pocket watch when he noticed me,\ngesturing me over while he got his whistle ready.";
-                    Edwin = 1;
-                }
-                else if (Understood == true && saveClass.informOthers == "0" && Edwin == 1)
-                {
-                    CharacterNameLabel.Text = "Lieutenant Edwin";
-                    ChatLabel.Text = "Get ready ol' chap,\nwe'll be going over the top soon and give those huns hell.";
-                    Edwin = 2;
-                }
-                else if (Understood == true && saveClass.informOthers == "0" && Edwin == 2)
-                {
-                    CharacterNameLabel.Text = "Lieutenant Edwin";
-                    ChatLabel.Text = "You could go tell the others to start getting ready.";
-                    Edwin = 0;
-                }
-                // After your first interaction
-                else if (saveClass.informOthers == "1")
-                {
-                    CharacterNameLabel.Visible = true;
-                    ChatLabel.Visible = true;
-                    CharacterNameLabel.Text = "";
-                    ChatLabel.Text = "Lieutenant Edwin noticed me looking at him and stared back coldly,\nstill with his whistle in his mouth.";
-                    Edwin = 1;
-                }
-                else if (Understood == true && saveClass.informOthers == "1" && Edwin == 1)
-                {
-                    CharacterNameLabel.Text = "Lieutenant Edwin";
-                    ChatLabel.Text = "Well?";
-                    Edwin = 2;
-                }
-                // If you informed everyone
-                else if (Understood == true && saveClass.informOthers == "1" && saveClass.matthieuInformed == "1" && saveClass.lochInformed == "1" && Edwin == 2)
-                {
-                    CharacterNameLabel.Text = "";
-                    ChatLabel.Text = "You nod and Lieutenant Edwin nods back before getting ready on the wooden ladder,\nit rickets as he puts pressure on a step.";
-                    Edwin = 3;
-                }
-                // Ends game early
-                else if (Understood == true && saveClass.informOthers == "1" && Edwin == 3)
-                {
-                    gameTimer.Stop();
-                    Form1.ChangeScreen(this, new GameOverScreen());
-                }
-                // If you haven't informed everyone
-                else if (Understood == true && saveClass.informOthers == "1" && Edwin == 2)
-                {
-                    CharacterNameLabel.Text = "";
-                    ChatLabel.Text = "You shake your head as Lieutenant Edwin scoffs.\nHe picks up his pocket watch again to inspect the time,\nthe small hand ticking down ever so slowly as you walked away.";
-                    Edwin = 0;
-                }
-            }
-            // Wipes dialogue clean at the end of every conversation tree
-            else if (Understood == true && Edwin == 0)
-            {
-                Talking = false;
-                CharacterNameLabel.Visible = false;
-                ChatLabel.Visible = false;
-                CharacterNameLabel.Text = "";
-                ChatLabel.Text = "";
-            }
+            //// Interacting with Lieutenant Edwin
+            //if (x > 0 && x < 180 && Talking == true)
+            //{
+            //    // First time interacting
+            //    if (saveClass.informOthers == "0")
+            //    {
+            //        CharacterNameLabel.Visible = true;
+            //        ChatLabel.Visible = true;
+            //        CharacterNameLabel.Text = "";
+            //        ChatLabel.Text = "Lieutenant Edwin was checking his pocket watch when he noticed me,\ngesturing me over while he got his whistle ready.";
+            //        Edwin = 1;
+            //    }
+            //    else if (Understood == true && saveClass.informOthers == "0" && Edwin == 1)
+            //    {
+            //        CharacterNameLabel.Text = "Lieutenant Edwin";
+            //        ChatLabel.Text = "Get ready ol' chap,\nwe'll be going over the top soon and give those huns hell.";
+            //        Edwin = 2;
+            //    }
+            //    else if (Understood == true && saveClass.informOthers == "0" && Edwin == 2)
+            //    {
+            //        CharacterNameLabel.Text = "Lieutenant Edwin";
+            //        ChatLabel.Text = "You could go tell the others to start getting ready.";
+            //        Edwin = 0;
+            //    }
+            //    // After your first interaction
+            //    else if (saveClass.informOthers == "1")
+            //    {
+            //        CharacterNameLabel.Visible = true;
+            //        ChatLabel.Visible = true;
+            //        CharacterNameLabel.Text = "";
+            //        ChatLabel.Text = "Lieutenant Edwin noticed me looking at him and stared back coldly,\nstill with his whistle in his mouth.";
+            //        Edwin = 1;
+            //    }
+            //    else if (Understood == true && saveClass.informOthers == "1" && Edwin == 1)
+            //    {
+            //        CharacterNameLabel.Text = "Lieutenant Edwin";
+            //        ChatLabel.Text = "Well?";
+            //        Edwin = 2;
+            //    }
+            //    // If you informed everyone
+            //    else if (Understood == true && saveClass.informOthers == "1" && saveClass.matthieuInformed == "1" && saveClass.lochInformed == "1" && Edwin == 2)
+            //    {
+            //        CharacterNameLabel.Text = "";
+            //        ChatLabel.Text = "You nod and Lieutenant Edwin nods back before getting ready on the wooden ladder,\nit rickets as he puts pressure on a step.";
+            //        Edwin = 3;
+            //    }
+            //    // Ends game early
+            //    else if (Understood == true && saveClass.informOthers == "1" && Edwin == 3)
+            //    {
+            //        gameTimer.Stop();
+            //        Form1.ChangeScreen(this, new GameOverScreen());
+            //    }
+            //    // If you haven't informed everyone
+            //    else if (Understood == true && saveClass.informOthers == "1" && Edwin == 2)
+            //    {
+            //        CharacterNameLabel.Text = "";
+            //        ChatLabel.Text = "You shake your head as Lieutenant Edwin scoffs.\nHe picks up his pocket watch again to inspect the time,\nthe small hand ticking down ever so slowly as you walked away.";
+            //        Edwin = 0;
+            //    }
+            //}
+            //// Wipes dialogue clean at the end of every conversation tree
+            //else if (Understood == true && Edwin == 0)
+            //{
+            //    Talking = false;
+            //    CharacterNameLabel.Visible = false;
+            //    ChatLabel.Visible = false;
+            //    CharacterNameLabel.Text = "";
+            //    ChatLabel.Text = "";
+            //}
 
             // Interacting with Matthieu
             if (x > 380 && x < 580 && Talking == true)

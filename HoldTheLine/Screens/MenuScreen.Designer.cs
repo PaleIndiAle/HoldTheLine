@@ -33,6 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ExitButton = new System.Windows.Forms.Button();
             this.backgroundBox = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.backgroundBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,11 +93,23 @@
             this.backgroundBox.TabIndex = 10;
             this.backgroundBox.TabStop = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(17, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(402, 124);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "W = Left\r\nD = Right\r\nSpace = Interact\r\nEnter = Continue a conversation";
+            // 
             // MenuScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.PlayButton);
             this.Controls.Add(this.ContinueButton);
@@ -116,5 +129,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.PictureBox backgroundBox;
+        private System.Windows.Forms.Label label2;
     }
 }

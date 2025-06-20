@@ -36,7 +36,6 @@
             this.MatthieuBox = new System.Windows.Forms.PictureBox();
             this.EdwinBox = new System.Windows.Forms.PictureBox();
             this.LochlanBox = new System.Windows.Forms.PictureBox();
-            this.blackBox = new System.Windows.Forms.PictureBox();
             this.CharacterNameLabel = new System.Windows.Forms.Label();
             this.ChatLabel = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -47,7 +46,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.MatthieuBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EdwinBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LochlanBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.blackBox)).BeginInit();
             this.SuspendLayout();
             // 
             // BackBox
@@ -102,15 +100,6 @@
             this.LochlanBox.TabIndex = 5;
             this.LochlanBox.TabStop = false;
             // 
-            // blackBox
-            // 
-            this.blackBox.Location = new System.Drawing.Point(0, 576);
-            this.blackBox.Name = "blackBox";
-            this.blackBox.Size = new System.Drawing.Size(820, 244);
-            this.blackBox.TabIndex = 6;
-            this.blackBox.TabStop = false;
-            this.blackBox.Visible = false;
-            // 
             // CharacterNameLabel
             // 
             this.CharacterNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -164,11 +153,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.FrontBox);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.ChatLabel);
             this.Controls.Add(this.CharacterNameLabel);
-            this.Controls.Add(this.blackBox);
+            this.Controls.Add(this.ChatLabel);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.EdwinBox);
             this.Controls.Add(this.MatthieuBox);
             this.Controls.Add(this.LochlanBox);
@@ -185,7 +173,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.MatthieuBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EdwinBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LochlanBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.blackBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -199,7 +186,6 @@
         private System.Windows.Forms.PictureBox MatthieuBox;
         private System.Windows.Forms.PictureBox EdwinBox;
         private System.Windows.Forms.PictureBox LochlanBox;
-        private System.Windows.Forms.PictureBox blackBox;
         private System.Windows.Forms.Label CharacterNameLabel;
         private System.Windows.Forms.Label ChatLabel;
         private System.Windows.Forms.Button button2;

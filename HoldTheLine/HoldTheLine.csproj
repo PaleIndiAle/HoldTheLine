@@ -132,6 +132,7 @@
     <Content Include="Resources\Left.png" />
     <Content Include="Resources\Lo.png" />
     <None Include="Resources\NPCIdle.png" />
+    <Content Include="Resources\NewIco.ico" />
     <Content Include="Resources\Right.png" />
     <Content Include="Resources\savefile.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
